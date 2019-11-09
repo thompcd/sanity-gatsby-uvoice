@@ -869,7 +869,7 @@
 		input[type="button"],
 		button,
 		.button {
-			box-shadow: inset 0 0 0 1px _palette(dark, border);
+			box-shadow: inset 0 0 0 3px _palette(dark, border);
 			color: _palette(dark, fg-bold) !important;
 
 			&:hover {

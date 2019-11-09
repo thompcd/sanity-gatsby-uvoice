@@ -1,7 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 
-import Layout from '../components/layout_old';
+import Layout from '../components/layout';
 
 import pic01 from '../assets/images/pic01.jpg'
 import pic02 from '../assets/images/pic02.jpg'
