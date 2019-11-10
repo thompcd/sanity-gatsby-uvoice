@@ -2,11 +2,24 @@
   "private": true,
   "name": "sanity-gatsby-blog-web",
   "version": "1.0.0",
-  "author": "Sanity <hello@sanity.io>",
+  "author": "Corey Thompson <corey.thompson@orangealligtorsolutions.com>",
+  "dependencies": {
+    "gatsby": "^2.15.14",
+    "gatsby-plugin-manifest": "^2.2.16",
+    "gatsby-plugin-offline": "^3.0.6",
+    "gatsby-plugin-react-helmet": "^3.1.7",
+    "gatsby-plugin-sass": "^2.1.14",
+    "gatsby-source-sanity": "^5.0.4",
+    "node-sass": "^4.12.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-helmet": "^5.2.1",
+    "gatsby-image": "^2.0.41"
+  },
   "scripts": {
     "build": "gatsby build",
     "clean-cache": "gatsby clean",
-    "dev": "npm run clean-cache && gatsby develop",
+    "dev": "npm run clean-cache && gatsby develop -p 8000",
     "lint": "eslint .",
     "format": "prettier-eslint --write \"**/*.js\" \"!.cache/**\" \"!node_modules/**\" \"!public/**\"",
     "test": "echo \"Write tests! -> https://gatsby.app/unit-testing\""
@@ -30,12 +43,10 @@
     "gatsby-source-sanity": "^4.0.3",
     "postcss-import": "^12.0.1",
     "postcss-preset-env": "^6.6.0",
+    "prettier": "^1.18.2",
     "prettier-eslint-cli": "^4.7.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1"
-  },
-  "dependencies": {
-    "gatsby-image": "^2.0.41"
   }
 }

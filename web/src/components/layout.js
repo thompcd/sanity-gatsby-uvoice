@@ -1,24 +1,104 @@
-import React from 'react'
-import Header from './header'
+import React from "react";
+import "../assets/scss/main.scss";
 
-import '../styles/layout.css'
-import styles from './layout.module.css'
+import Header from "./Header";
+import Footer from "./Footer";
+import {graphql} from 'gatsby'
+import {
+  mapEdgesToNodes,
+  filterOutDocsWithoutSlugs,
+  filterOutDocsPublishedInTheFuture
+} from '../lib/helpers'
+import BlogPostPreviewList from '../components/blog-post-preview-list'
+import Container from '../components/container'
+import GraphQLErrorList from '../components/graphql-error-list'
+import SEO from '../components/seo'
+import Layout from '../containers/layout'
 
-const Layout = ({children, onHideNav, onShowNav, showNav, siteTitle}) => (
-  <>
-    <Header siteTitle={siteTitle} onHideNav={onHideNav} onShowNav={onShowNav} showNav={showNav} />
-    <div className={styles.content}>{children}</div>
-    <footer className={styles.footer}>
-      <div className={styles.footerWrapper}>
-        <div className={styles.siteInfo}>
-          &copy; {new Date().getFullYear()}, Built with <a href='https://www.sanity.io'>Sanity</a>{' '}
-          &amp;
-          {` `}
-          <a href='https://www.gatsbyjs.org'>Gatsby</a>
-        </div>
-      </div>
-    </footer>
-  </>
-)
+export const query = graphql`
+  fragment SanityImage on SanityMainImage {
+    crop {
+      _key
+      _type
+      top
+      bottom
+      left
+      right
+    }
+    hotspot {
+      _key
+      _type
+      x
+      y
+      height
+      width
+    }
+    asset {
+      _id
+    }
+  }
 
-export default Layout
+  query IndexPageQuery {
+    site: sanitySiteSettings(_id: { regex: "/(drafts.|)siteSettings/" }) {
+      title
+      description
+      keywords
+    }
+    posts: allSanityPost(
+      limit: 6
+      sort: { fields: [publishedAt], order: DESC }
+      filter: { slug: { current: { ne: null } }, publishedAt: { ne: null } }
+    ) {
+      edges {
+        node {
+          id
+          publishedAt
+          mainImage {
+            ...SanityImage
+            alt
+          }
+          title
+          _rawExcerpt
+          slug {
+            current
+          }
+        }
+      }
+    }
+  }
+`
+
+class Template extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        loading: 'is-loading'
+      }
+    }
+
+    componentDidMount () {
+      this.timeoutId = setTimeout(() => {
+          this.setState({loading: ''});
+      }, 100);
+    }
+
+    componentWillUnmount () {
+      if (this.timeoutId) {
+          clearTimeout(this.timeoutId);
+      }
+    }
+
+    render() {
+        const { children } = this.props;
+
+        return (
+            <div className={`body ${this.state.loading}`}>
+                <Header />
+                {children}
+                <Footer />
+            </div>
+        );
+    }
+}
+
+export default Template;
