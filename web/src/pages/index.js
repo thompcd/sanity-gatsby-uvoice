@@ -90,7 +90,7 @@ class Homepage extends React.Component {
 
                     </div>
                     <div className="col-4">
-                        <a href="#" className="button">Show More</a>
+                        <a href="./archive" className="button">Show More</a>
                     </div>
                 </section>
 
