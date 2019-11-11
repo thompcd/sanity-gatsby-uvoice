@@ -1,5 +1,5 @@
-import {Link} from 'gatsby'
 import React from 'react'
+import {Link} from 'gatsby'
 import BlogPostPreview from './blog-post-preview'
 
 import styles from './blog-post-preview-grid.module.css'
