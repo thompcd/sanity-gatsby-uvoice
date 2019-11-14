@@ -1,5 +1,5 @@
-import React from 'react'
 import {format, distanceInWords, differenceInDays} from 'date-fns'
+import React from 'react'
 import {buildImageObj} from '../lib/helpers'
 import {imageUrlFor} from '../lib/image-url'
 import PortableText from './portableText'
