@@ -132,7 +132,6 @@ class Homepage extends React.Component {
                 </section>
             </Layout>
             </div>
-
         );
     }
 }
