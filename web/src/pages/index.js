@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 
+import Header from "../components/header";
 import Layout from '../components/layout';
 
 import pic01 from '../assets/images/pic01.jpg'
@@ -9,10 +10,29 @@ import pic03 from '../assets/images/pic03.jpg'
 import pic04 from '../assets/images/pic04.jpg'
 
 class Homepage extends React.Component {
+    state = {
+        name: "",
+        email: "",
+      }
+      handleInputChange = event => {
+        const target = event.target
+        const value = target.value
+        const name = target.name
+        this.setState({
+          [name]: value,
+        })
+      }
+      handleSubmit = event => {
+        event.preventDefault()
+        alert(`Welcome ${this.state.firstName} ${this.state.lastName}!`)
+      }
+    
     render() {
         const siteTitle = "Home | UVoice Consulting";
 
         return (
+            <div>
+            <Header />
             <Layout>
                 <Helmet title={siteTitle} />
 
@@ -90,7 +110,7 @@ class Homepage extends React.Component {
 
                     </div>
                     <div className="col-4">
-                        <a href="#" className="button">Show More</a>
+                        <a href="./archive" className="button">Show More</a>
                     </div>
                 </section>
 
@@ -99,13 +119,19 @@ class Homepage extends React.Component {
                         <header className="major">
                             <h2>Let's Get In Touch</h2>
                         </header>
+                        <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">  
+                            <input type="hidden" name="bot-field" />  
+                            <input type="hidden" name="form-name" value="contact" />
                         <ul className="actions uniform">
-                            <li>There's going to be a nice contact form here.</li>
-                            <li><a href="#" className="button special">Send</a></li>
+                            <li><input type="text" name="name" value={this.state.name} onChange={this.handleInputChange} placeholder="name"></input></li>
+                            <li><input type="email" name="email" value={this.state.email} onChange={this.handleInputChange} placeholder="name@email.com"></input></li>
+                            <li><button type="submit">Send</button></li>
                         </ul>
+                        </form>
                     </div>
                 </section>
             </Layout>
+            </div>
         );
     }
 }

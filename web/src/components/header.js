@@ -7,12 +7,10 @@ class Header extends React.Component {
             <section id="header">
                 <div className="inner">
                     <span className="image"><img src={uvIcon} alt="" /></span>
-                    {/* <span className="icon major fa-cloud"></span> */}
-                    <h1>Marketing strategies <br /> to help yo<strong>u</strong>r company find its <strong>voice</strong>.</h1>
-                    <p>Accumsan feugiat mi commodo erat lorem ipsum, sed magna<br />
-                    lobortis feugiat sapien sed etiam volutpat accumsan.</p>
+                    <h1>Shout from the mountain tops.</h1>
+                    <p>Marketing advice to help customers find their voice and promote sustainable growth.</p>
                     <ul className="actions">
-                        <li><a href="#one" className="button scrolly">Discover</a></li>
+                        <li><a href="./#one" className="button scrolly">Discover</a></li>
                     </ul>
                 </div>
             </section>

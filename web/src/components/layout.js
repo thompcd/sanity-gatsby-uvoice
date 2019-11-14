@@ -1,19 +1,8 @@
 import React from "react";
+import {graphql} from 'gatsby'
 import "../assets/scss/main.scss";
 
-import Header from "./Header";
 import Footer from "./Footer";
-import {graphql} from 'gatsby'
-import {
-  mapEdgesToNodes,
-  filterOutDocsWithoutSlugs,
-  filterOutDocsPublishedInTheFuture
-} from '../lib/helpers'
-import BlogPostPreviewList from '../components/blog-post-preview-list'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
-import SEO from '../components/seo'
-import Layout from '../containers/layout'
 
 export const query = graphql`
   fragment SanityImage on SanityMainImage {
@@ -93,7 +82,6 @@ class Template extends React.Component {
 
         return (
             <div className={`body ${this.state.loading}`}>
-                <Header />
                 {children}
                 <Footer />
             </div>
