@@ -2,7 +2,6 @@ import React from "react";
 import {graphql} from 'gatsby'
 import "../assets/scss/main.scss";
 
-import Header from "./Header";
 import Footer from "./Footer";
 
 export const query = graphql`
@@ -83,7 +82,6 @@ class Template extends React.Component {
 
         return (
             <div className={`body ${this.state.loading}`}>
-                <Header />
                 {children}
                 <Footer />
             </div>

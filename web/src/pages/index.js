@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 
+import Header from "../components/header";
 import Layout from '../components/layout';
 
 import pic01 from '../assets/images/pic01.jpg'
@@ -13,6 +14,8 @@ class Homepage extends React.Component {
         const siteTitle = "Home | UVoice Consulting";
 
         return (
+            <div>
+            <Header />
             <Layout>
                 <Helmet title={siteTitle} />
 
@@ -106,6 +109,8 @@ class Homepage extends React.Component {
                     </div>
                 </section>
             </Layout>
+            </div>
+
         );
     }
 }

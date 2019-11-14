@@ -7,7 +7,6 @@ class Header extends React.Component {
             <section id="header">
                 <div className="inner">
                     <span className="image"><img src={uvIcon} alt="" /></span>
-                    {/* <span className="icon major fa-cloud"></span> */}
                     <h1>Shout from the mountain tops.</h1>
                     <p>Marketing advice to help customers find their voice and promote sustainable growth.</p>
                     <ul className="actions">
