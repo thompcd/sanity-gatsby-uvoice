@@ -34,6 +34,13 @@ export const query = graphql`
         }
       }
     }
+    images: allSanityImageAsset(limit: 1) {
+        edges {
+          node {
+            url
+          }
+        }
+      }
   }
 `
 
@@ -50,6 +57,8 @@ const HomePage = props => {
       }
 
       const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
+      const section1ImgURL = data && data.images && mapEdgesToNodes(data.images)[0].url
+      console.log("image", section1ImgURL)
       const siteTitle = "Home | UVoice Consulting";
 
       return (
@@ -68,7 +77,7 @@ const HomePage = props => {
                         <p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
                     </div>
                     <div className="col-6">
-                        <span className="image fit"><img src={pic01} alt="" /></span>
+                        <span className="image fit"><img src={section1ImgURL} alt="" /></span>
                     </div>
                 </div>
             </section>
@@ -97,23 +106,14 @@ const HomePage = props => {
                 </div>
             </section>
 
-            <section id="three" className="main style1 special">
-                <div className="grid-wrapper">
+            <section id="three" className="main style1 special blog">
                     <div className="col-12">
                         <header className="major">
                             <h2>Top Blog Posts</h2>
                         </header>
+                        {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
+                        <a href="./archive" className="button">Show More</a>
                     </div>
-
-                <Container>
-                    {postNodes && postNodes.length > 0 && <BlogPostPreviewGrid nodes={postNodes} />}
-                </Container>
-
-
-                </div>
-                <div className="col-4">
-                    <a href="./archive" className="button">Show More</a>
-                </div>
             </section>
 
             <section id="four" className="main style2 special">
