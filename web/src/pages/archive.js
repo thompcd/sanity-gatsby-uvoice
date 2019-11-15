@@ -1,11 +1,12 @@
 import React from 'react'
 import {graphql} from 'gatsby'
 import {mapEdgesToNodes} from '../lib/helpers'
-import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
-import Container from '../components/container'
-import GraphQLErrorList from '../components/graphql-error-list'
+
 import SEO from '../components/seo'
 import Layout from '../containers/layout'
+import GraphQLErrorList from '../components/graphql-error-list'
+import Container from '../components/container'
+import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
 
 import {responsiveTitle1} from '../components/typography.module.css'
 
