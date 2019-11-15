@@ -9,7 +9,6 @@ import GraphQLErrorList from '../components/graphql-error-list'
 import Container from '../components/container'
 import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
 
-import {responsiveTitle1} from '../components/typography.module.css'
 import pic01 from '../assets/images/pic01.jpg'
 
 export const query = graphql`
@@ -38,47 +37,6 @@ export const query = graphql`
   }
 `
 
-// export const query = graphql`
-// {
-//     allSanityPost(limit: 3) {
-//       edges {
-//         node {
-//           id
-//           publishedAt
-//           mainImage {
-//             ...SanityImage
-//             alt
-//             }
-//             title
-//             _rawExcerpt
-//             slug {
-//               current
-//             }
-//         }
-//       }
-//     }
-//   }
-// `;
-
-const state = {
-    name: "",
-    email: "",
-}
-
-const handleInputChange = event => {
-    const target = event.target
-    const value = target.value
-    const name = target.name
-    this.setState({
-      [name]: value,
-    })
-  }
-
-  const handleSubmit = event => {
-    event.preventDefault()
-    alert(`Welcome ${this.state.firstName} ${this.state.lastName}!`)
-  }
-
 const HomePage = props => {
     const {data, errors} = props
 
@@ -92,8 +50,6 @@ const HomePage = props => {
       }
 
       const postNodes = data && data.posts && mapEdgesToNodes(data.posts)
-
-        console.log("post nodes", postNodes)
       const siteTitle = "Home | UVoice Consulting";
 
       return (
@@ -169,8 +125,8 @@ const HomePage = props => {
                         <input type="hidden" name="bot-field" />  
                         <input type="hidden" name="form-name" value="contact" />
                     <ul className="actions uniform">
-                        <li><input type="text" name="name" value={state.name} onChange={handleInputChange} placeholder="name"></input></li>
-                        <li><input type="email" name="email" value={state.email} onChange={handleInputChange} placeholder="name@email.com"></input></li>
+                        <li><input type="text" name="name" placeholder="name"></input></li>
+                        <li><input type="email" name="email" placeholder="name@email.com"></input></li>
                         <li><button type="submit">Send</button></li>
                     </ul>
                     </form>
