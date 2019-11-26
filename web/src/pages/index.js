@@ -8,9 +8,6 @@ import Layout from '../components/layout';
 import GraphQLErrorList from '../components/graphql-error-list'
 import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
 
-import networkIcon from '../assets/images/noun_team building.svg'
-
-
 export const query = graphql`
   query BlogPreviewQuery {
     posts: allSanityPost(
