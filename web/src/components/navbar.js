@@ -79,6 +79,11 @@ class Navbar extends React.Component {
                                 <span>Blog</span>
                             </Link>
                         </li>
+                        <li>
+                            <Link to="./#contact">
+                                <span>Contact</span>
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
                 {/* {placeholder && (

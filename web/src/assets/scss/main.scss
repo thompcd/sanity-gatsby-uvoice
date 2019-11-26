@@ -1424,11 +1424,14 @@ nav {
 		}
 	}
 
-	a img {
+	a {
+		color: white;
+		img {
 		width: 48px;
 		height: auto;
 		align-items: center;
 		transition: width 0.25s;
+		}
 	}
 
 	&.scrolled {
@@ -1449,13 +1452,7 @@ nav {
 		z-index: -1;
 		top: 0;
 		left: 0;
-		// @include padding(9em, 0, (0,0,_size(element-margin),0));
-		// background-attachment:	fixed,							fixed,							fixed;
-		// background-image:		url('../images/overlay2.png'),		url('../images/overlay3.svg'),		linear-gradient(45deg, _palette(accent1-alt) 5%, _palette(accent3-alt) 30%, _palette(accent6-alt));
-		// background-position:	top left,						center center,					center center;
-		// background-size:		auto,							cover,							cover;
-		// overflow: hidden;
-		// position: relative;
+		background-color:_palette(accent1-alt);
 		text-align: center;
 	}
 
@@ -1468,7 +1465,7 @@ nav {
 			vertical-align: middle;
 
 			a {
-				margin: 0 0px;
+				margin: 0 1rem;
 				position: relative;
 
 				&:before {
@@ -1611,21 +1608,38 @@ nav {
   	nav{
 		justify-content: center;
 
-		img {
-			width: 32px;
+		// a img {
+		// 	width: 32px;
+		// }
+
+		// &.scrolled {
+		// 	padding: 10px 36px;
+
+		// 	img {
+		// 		width: 24px;
+		// 	}
+		// }
+
+		a img {
+			width: 48px;
+			height: auto;
+			align-items: center;
+			transition: width 0.25s;
 		}
-
+	
 		&.scrolled {
-			padding: 10px 36px;
-
+			visibility: unset;
+			padding: 12px 36px;
+			display: flex;
+	
 			img {
-				width: 24px;
+				width: 28px;
 			}
 		}
 
-		ul{
-			display: none;
-		}
+		// ul{
+		// 	display: none;
+		// }
 
 		#menu-open{
 			display: block;

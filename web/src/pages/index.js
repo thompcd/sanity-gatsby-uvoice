@@ -8,6 +8,9 @@ import Layout from '../components/layout';
 import GraphQLErrorList from '../components/graphql-error-list'
 import BlogPostPreviewGrid from '../components/blog-post-preview-grid'
 
+import networkIcon from '../assets/images/noun_team building.svg'
+
+
 export const query = graphql`
   query BlogPreviewQuery {
     posts: allSanityPost(
@@ -82,12 +85,12 @@ const HomePage = props => {
                 <div className="grid-wrapper">
                     <div className="col-6">
                         <ul className="major-icons">
-                            <li><span className="icon style1 major fa-code"></span></li>
-                            <li><span className="icon style2 major fa-bolt"></span></li>
-                            <li><span className="icon style3 major fa-camera-retro"></span></li>
-                            <li><span className="icon style4 major fa-cog"></span></li>
-                            <li><span className="icon style5 major fa-desktop"></span></li>
+                            <li><span className="icon style1 major fa-handshake-o "></span></li>
+                            <li><span className="icon style5 major fa-suitcase "></span></li>
+                            <li><span className="icon style3 major fa-users "></span></li>
+                            <li><span className="icon style4 major fa-commenting-o "></span></li>
                             <li><span className="icon style6 major fa-calendar"></span></li>
+                            <li><span className="icon style2 major fa-rocket "></span></li>
                         </ul>
                     </div>
                     <div className="col-6">

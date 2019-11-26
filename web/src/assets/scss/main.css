@@ -1574,6 +1574,10 @@ nav #menu-open .icon {
   height: 32px;
 }
 
+nav a {
+  color: white;
+}
+
 nav a img {
   width: 48px;
   height: auto;
@@ -1604,6 +1608,7 @@ nav #inner-wrapper {
   z-index: -1;
   top: 0;
   left: 0;
+  background-color: #106f92;
   text-align: center;
 }
 
@@ -1619,7 +1624,7 @@ nav ul li {
 }
 
 nav ul li a {
-  margin: 0 0px;
+  margin: 0 1rem;
   position: relative;
 }
 
@@ -1785,17 +1790,24 @@ nav ul li.switch-theme .switch-button div.active {
         -ms-flex-pack: center;
             justify-content: center;
   }
-  nav img {
-    width: 32px;
+  nav a img {
+    width: 48px;
+    height: auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-transition: width 0.25s;
+    transition: width 0.25s;
   }
   nav.scrolled {
-    padding: 10px 36px;
+    visibility: unset;
+    padding: 12px 36px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
   nav.scrolled img {
-    width: 24px;
-  }
-  nav ul {
-    display: none;
+    width: 28px;
   }
   nav #menu-open {
     display: block;
