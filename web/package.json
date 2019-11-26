@@ -5,6 +5,8 @@
   "author": "Corey Thompson <corey.thompson@orangealligtorsolutions.com>",
   "dependencies": {
     "gatsby": "^2.15.14",
+    "gatsby-image": "^2.0.41",
+    "gatsby-link": "^2.2.24",
     "gatsby-plugin-manifest": "^2.2.16",
     "gatsby-plugin-offline": "^3.0.6",
     "gatsby-plugin-react-helmet": "^3.1.7",
@@ -13,8 +15,7 @@
     "node-sass": "^4.12.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-helmet": "^5.2.1",
-    "gatsby-image": "^2.0.41"
+    "react-helmet": "^5.2.1"
   },
   "scripts": {
     "build": "npm run clean-cache && gatsby build",

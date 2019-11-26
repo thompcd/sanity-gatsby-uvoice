@@ -1,5 +1,7 @@
 import React from "react";
 import {graphql} from 'gatsby'
+import Navbar from './navbar'
+
 import "../assets/scss/main.scss";
 
 import Footer from "./Footer";
@@ -78,13 +80,19 @@ class Template extends React.Component {
     }
 
     render() {
-        const { children } = this.props;
+        const { placeholder, children } = this.props;
 
         return (
+          <div>
+            <div style={{top: '0px',position: 'absolute'}}>
+                <Navbar placeholder={placeholder === undefined ? true : placeholder}/>
+            </div>
             <div className={`body ${this.state.loading}`}>
                 {children}
                 <Footer />
             </div>
+            </div>
+
         );
     }
 }
