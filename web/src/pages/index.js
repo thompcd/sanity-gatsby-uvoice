@@ -68,7 +68,7 @@ const HomePage = props => {
                 <div className="grid-wrapper">
                     <div className="col-6">
                         <header className="major">
-                            <h2>UVOICE builds growth through marketing, technology and sales enablement strategies, backed by implementation and concurrent processes. </h2>
+                            <h2>Empowering businesses with more than marketing.</h2>
                         </header>
                         <p>UVOICE builds growth through marketing, technology and sales enablement strategies, backed by implementation and concurrent processes.</p>
                     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import uvIcon from '../assets/images/UVOICE-logo-100x133-white.png'
+import uvIcon from '../assets/images/UVOICE-logo-28x37-white.png'
 
 export default function() {
     return (
